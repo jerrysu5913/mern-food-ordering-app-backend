@@ -35,6 +35,8 @@ app.use("/api/my/restaurant", myRestaurantRoute);
 app.use("/api/restaurant", restaurantRoute);
 app.use("/api/order", orderRoute);
 
-app.listen(7000, () => {
-  console.log("server started on localhost:7000");
+// Use the PORT environment variable provided by Heroku, defaulting to 7000 if not set
+const PORT = process.env.PORT || 7000;
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
 });
